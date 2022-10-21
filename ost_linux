@@ -1,0 +1,25 @@
+echo "JAI BAJRANGBALI"
+echo "enter the user name: "
+read unm
+x=`cat /etc/passwd | cut -d ":" -f1| grep "$unm" `
+if [ $x == $unm ]
+then
+        echo "user present"
+else
+        echo "userid absent"
+fi
+
+echo "enter a string"
+read stri
+x=`echo $stri | tr "[a-z]" "[A-Z]"`
+y=`echo $x | wc -c`
+z=$(($y - 1))
+echo $z
+a="1"
+while test $a -lt $y
+do
+        ltr=`echo $x | cut -c$a`
+        echo $ltr
+        a=$(( $a + 2 ))
+done
+
